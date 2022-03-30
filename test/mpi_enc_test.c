@@ -559,8 +559,11 @@ MPP_RET test_mpp_run(MpiEncMultiCtxInfo *info)
                 goto RET;
         } else {
             if (p->cam_ctx == NULL) {
-                ret = fill_image(buf, p->width, p->height, p->hor_stride,
-                                 p->ver_stride, p->fmt, p->frame_count);
+                /*ret = fill_image(buf, p->width, p->height, p->hor_stride,
+                                 p->ver_stride, p->fmt, p->frame_count);*/
+                ret = fill_image_consti(buf, p->width, p->height, p->hor_stride,
+                                        p->ver_stride, p->fmt, p->frame_count);
+
                 if (ret)
                     goto RET;
             } else {
